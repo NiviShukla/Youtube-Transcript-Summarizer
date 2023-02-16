@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Youtube Transcript Summariser</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+        <style>
+            h1 {
+                text-align: center;
+                font-family: 'Open Sans', sans-serif;
+                color: coral;
+            }
+            body {
+                width: max-content;
+                max-width: 800px;
+                background-color: white;
+                font-family: Arial, sans-serif;
+            }
+            button {
+                background-color: coral;
+                color: white;
+                border-radius: 8px;
+                width: max-content;
+                height: max-content;
+                padding: 10px;
+                font-size: large;
+                margin: auto;
+                display: block;
+                border-color: white;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                cursor: pointer;
+                transition: all 0.2s ease-in-out;
+            }
+            button[disabled] {
+                background-color: lightcoral;
+                color: white;
+                border-radius: 8px;
+                width: max-content;
+                height: max-content;
+                padding: 10px;
+                font-size: large;
+                margin: auto;
+                display: block;
+                border-color: lightpink;
+                cursor: default;
+            }
+            button:hover {
+                background-color: white;
+                color: coral;
+                border-color: coral;
+            }
+            button:active {
+                transform: translateY(2px);
+                box-shadow: 0 2px 2px rgba(0,0,0,0.1);
+            }
+            p {
+                font-size: medium;
+                text-align: center;
+                margin: 20px 0;
+            }
+            #output {
+    background-color: lightgray;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: left;
+    min-height: 100px;
+    margin: 20px 0;
+    transition: all 0.5s ease-in-out;
+    opacity: 0;
+    transform: scale(0.9);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+#output.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+#output p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+            @keyframes fadein {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Youtube Transcript Summariser</h1>
+        <button id="summarise" type="button">Summarise</button>
+        <br/>
+        <p id="output"></p>
+        <script src="popup.js"></script>
+    </body>
+</html>
