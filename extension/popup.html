@@ -1,96 +1,101 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Youtube Transcript Summariser</title>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-        <style>
-            h1 {
-                text-align: center;
-                font-family: 'Open Sans', sans-serif;
-                color: coral;
-            }
-            body {
-                width: max-content;
-                max-width: 800px;
-                background-color: white;
-                font-family: Arial, sans-serif;
-            }
-            button {
-                background-color: coral;
-                color: white;
-                border-radius: 8px;
-                width: max-content;
-                height: max-content;
-                padding: 10px;
-                font-size: large;
-                margin: auto;
-                display: block;
-                border-color: white;
-                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-                cursor: pointer;
-                transition: all 0.2s ease-in-out;
-            }
-            button[disabled] {
-                background-color: lightcoral;
-                color: white;
-                border-radius: 8px;
-                width: max-content;
-                height: max-content;
-                padding: 10px;
-                font-size: large;
-                margin: auto;
-                display: block;
-                border-color: lightpink;
-                cursor: default;
-            }
-            button:hover {
-                background-color: white;
-                color: coral;
-                border-color: coral;
-            }
-            button:active {
-                transform: translateY(2px);
-                box-shadow: 0 2px 2px rgba(0,0,0,0.1);
-            }
-            p {
-                font-size: medium;
-                text-align: center;
-                margin: 20px 0;
-            }
-            #output {
-    background-color: lightgray;
-    padding: 10px;
-    border-radius: 8px;
-    text-align: left;
-    min-height: 100px;
-    margin: 20px 0;
-    transition: all 0.5s ease-in-out;
-    opacity: 0;
-    transform: scale(0.9);
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
 
-#output.show {
-    opacity: 1;
-    transform: scale(1);
-}
+<head>
+    <title>Youtube Transcript Summariser</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
 
-#output p {
-    font-size: 16px;
-    line-height: 1.5;
-    margin-bottom: 8px;
-}
-            @keyframes fadein {
-                from { opacity: 0; }
-                to { opacity: 1; }
-            }
-        </style>
-    </head>
-    <body>
-        <h1>Youtube Transcript Summariser</h1>
-        <button id="summarise" type="button">Summarise</button>
-        <br/>
-        <p id="output"></p>
-        <script src="popup.js"></script>
-    </body>
+        body {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        button {
+            position: relative;
+            width: 150px;
+            height: 40px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            border: 2px solid #000000;
+            background-color: #727272;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+
+        .button,
+        .button__icon,
+        .button__text {
+            transition: all 0.3s;
+        }
+
+        .button .button__text {
+            transform: translateX(30px);
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .button .button__icon {
+            position: absolute;
+            transform: translateX(109px);
+            height: 100%;
+            width: 39px;
+            background-color: #808080;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .button .svg {
+            width: 30px;
+            stroke: #fff;
+        }
+
+        .button:hover {
+            background: #979797;
+        }
+
+        .button:hover .button__text {
+            color: transparent;
+        }
+
+        .button:hover .button__icon {
+            width: 148px;
+            transform: translateX(0);
+        }
+
+        .button:active .button__icon {
+            background-color: #ffa181;
+        }
+
+        .button:active {
+            border: 1px solid #ffae9e;
+        }
+
+        p {
+            font-size: medium;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Youtube Transcript Summariser</h1>
+    <button id="summarise" type="button" class="button">
+        <span class="button__text">Summarise</span>
+        <span class="button__icon"><svg src="images/summerize.svg" width="24" viewBox="0 0 24 24"
+                stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" height="24"
+                fill="none" class="svg">
+                <line y2="19" y1="5" x2="12" x1="12"></line>
+                <line y2="12" y1="12" x2="19" x1="5"></line>
+            </svg></span>
+    </button>
+    <p id="output"></p>
+    <script src="popup.js"></script>
+</body>
+
 </html>
