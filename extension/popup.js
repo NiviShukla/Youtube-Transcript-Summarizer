@@ -10,7 +10,6 @@ btn.addEventListener("click", function() {
             var text = xhr.responseText;
             const p = document.getElementById("output");
             p.innerHTML = text;
-            p.style.opacity = 1;
             btn.disabled = false;
             btn.innerHTML = "Summarise";
         }
