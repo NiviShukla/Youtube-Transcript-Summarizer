@@ -1,33 +1,51 @@
-# Youtube-Transcript-Summarizer
-In this project, we will be creating a Chrome Extension which will make a request to a
-backend REST API where it will perform NLP and respond with a summarized version of a
-YouTube transcript. 
+# YouTube Transcript Summarizer
+
+This project aims to create a Chrome Extension that leverages a backend REST API to perform Natural Language Processing (NLP) and provide a summarized version of a YouTube transcript.
 
 ## Project Context
 
-
-Enormous number of video recordings are being created and shared on the Internet
-throughout the day. It has become really difficult to spend time watching such videos which
-may have a longer duration than expected and sometimes our efforts may become futile if
-we couldn't find relevant information out of it. Summarizing transcripts of such videos
-automatically allows us to quickly lookout for the important patterns in the video and helps
-us to save time and effort to go through the whole content of the video.
-This project will give us an opportunity to have hands-on experience with state of the art
-NLP technique for abstractive text summarization and implement an interesting idea
-suitable for intermediates and a refreshing hobby project for professionals.
+With the enormous number of video recordings being created and shared on the internet every day, it has become increasingly challenging to find relevant information efficiently. Videos with longer durations can be time-consuming to watch, and it can be frustrating when we cannot extract the key points or important patterns from them. Automatic summarization of video transcripts enables us to quickly identify essential information, saving time and effort by avoiding the need to go through the entire video content. This project offers an opportunity to gain hands-on experience with state-of-the-art NLP techniques for abstractive text summarization and implement an intriguing idea suitable for intermediate developers or a refreshing hobby project for professionals.
 
 ## High-Level Approach
-• Get transcripts/subtitles for a given YouTube video Id using a Python API.
 
-• Perform text summarization on obtained transcripts using HuggingFace transformers.
+The project follows these key steps:
 
-• Build a Flask backend REST API to expose the summarization service to the client.
-
-• Develop a chrome extension which will utilize the backend API to display summarized
-text to the user.
+1. Obtain transcripts/subtitles for a given YouTube video ID using a Python API.
+2. Perform text summarization on the obtained transcripts using HuggingFace transformers or similar NLP models.
+3. Build a Flask backend REST API to expose the summarization service to the client.
+4. Develop a Chrome extension that utilizes the backend API to display the summarized text to the user.
 
 ## Applications
-• Meetings and video-conferencing - A system that could turn voice to text and generate
-summaries from your team meetings.
 
-• Patent research - A summarizer to extract the most salient claims across patents.
+The YouTube Transcript Summarizer has various potential applications, including:
+
+- Meetings and video-conferencing: A system that can convert voice to text and generate summaries from team meetings, making it easier to review discussions and action items.
+- Patent research: A summarizer capable of extracting the most salient claims across patents, facilitating efficient analysis and comparison of intellectual property.
+
+## Prerequisites
+
+Before using this project, ensure you have the following:
+
+- Python installed (version X.X.X)
+- Chrome browser installed (version X.X.X)
+
+## Installation and Usage
+
+To use the YouTube Transcript Summarizer, follow these steps:
+
+1. Clone this repository to your local machine.
+2. Install the required Python dependencies by running `pip install -r requirements.txt`.
+3. Start the Flask backend API by running `python api.py`.
+4. Open the Chrome browser and navigate to `chrome://extensions`.
+5. Enable Developer Mode by toggling the switch in the top-right corner.
+6. Click on "Load unpacked" and select the folder where you cloned the repository.
+7. The YouTube Transcript Summarizer extension should now appear in your Chrome browser toolbar.
+8. Visit any YouTube video page and click on the extension icon to generate a summarized version of the transcript.
+
+## Contribution
+
+Contributions to this project are welcome. If you find any issues or have suggestions for improvements, please feel free to submit a pull request.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
