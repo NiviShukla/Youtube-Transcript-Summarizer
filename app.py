@@ -5,7 +5,7 @@ from transformers import pipeline, PegasusForConditionalGeneration, PegasusToken
 app = Flask(__name__)
 
 def jls_extract_def():
-    return get_transcript
+    return get_transcript()
 
 @app.get('/summary')
 def summary_api():
